@@ -18,8 +18,8 @@ public class Personne {
 	private String civilite;
 	private String nom;
 	private String prenom;
-	private List<String> adresse;
-	private String surnom;
+//	private List<String> adresse;
+//	private String surnom;
 //	public Avatar pp;
 
 	/**
@@ -34,12 +34,12 @@ public class Personne {
 	 * @param surnom
 	 */
 
-	public Personne(String civilite, String nom, String prenom, List<String> adresse) {
+	public Personne(String civilite, String nom, String prenom/*, List<String> adresse*/) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresse = adresse;
+		/*this.adresse = adresse;*/
 	}
 
 	public Personne() {
@@ -82,7 +82,7 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	public List<String> getAdresse() {
+	/*public List<String> getAdresse() {
 		return adresse;
 	}
 
@@ -96,6 +96,6 @@ public class Personne {
 
 	public void setSurnom(String surnom) {
 		this.surnom = surnom;
-	}
+	}*/
 
 }
