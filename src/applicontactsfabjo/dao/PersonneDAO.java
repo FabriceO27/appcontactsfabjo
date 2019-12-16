@@ -8,26 +8,30 @@ import javax.persistence.PersistenceContext;
 
 import applicontactsfabjo.entities.Personne;
 
+@Singleton
 public class PersonneDAO {
 
-	@Singleton
-	public class PersonneServices {
+	@PersistenceContext(name = "contacts")
+	private EntityManager em;
 
-		@PersistenceContext(name = "contacts")
-		private EntityManager em;
+	public List<Personne> findPersonnes() {
+		return em.createNamedQuery("personne.findPersonne", Personne.class).getResultList();
+	}
 
-		public List<Personne> findPersonnes() {
-			return em.createNamedQuery("", Personne.class).getResultList();
-		}
+	public List<Personne> findPersonneById(int pk) {
+		return em.createNamedQuery("personne.findPersonneById", Personne.class).setParameter("pk", pk).getResultList();
 
-		public List<Personne> findPersonneById(int pk) {
-			return em.createNamedQuery("", Personne.class).setParameter("pk", pk).getResultList();
+	}
 
-		}
+	public void addPersonne(Personne personne) {
+		em.persist(personne);
+	}
 
-		public void addPersonne(Personne personne) {
-//em.createStoredProcedureQuery("",personne.Class().
-		}
+	public void updatePersonne(Personne personne, int pk) {
+		Personne person = em.find(Personne.class, pk);
 
+		em.getTransaction().begin();
+		person = new Personne(personne.getCivilite(), personne.getPrenom(), personne.getNom(), personne.getAdresse());
+		em.getTransaction().commit();
 	}
 }

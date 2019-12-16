@@ -7,6 +7,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "personnes")
 @Access(AccessType.FIELD)
+@NamedQuery(name = "personne.findPersonne", query = "SELECT p FROM Personne p")
+@NamedQuery(name = "personne.findPersonneById", query = "SELECT p FROM Personne p WHERE p.pk LIKE :pk")
+
 public class Personne {
 
 	@Id
@@ -31,14 +34,12 @@ public class Personne {
 	 * @param surnom
 	 */
 
-	public Personne(int pk, String civilite, String nom, String prenom, List<String> adresse, String surnom) {
+	public Personne(String civilite, String nom, String prenom, List<String> adresse) {
 		super();
-		this.pk = pk;
 		this.civilite = civilite;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
-		this.surnom = surnom;
 	}
 
 	public Personne() {

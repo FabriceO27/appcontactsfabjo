@@ -14,8 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "adresses")
 @Access(AccessType.FIELD)
-public class Adresse implements Serializable{
-
+public class Adresse implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +25,11 @@ public class Adresse implements Serializable{
 	private String codePostal;
 	private String ville;
 	private String pays;
-	
-	//CONSTRUCTEURS
-	public Adresse() {}
+
+	// CONSTRUCTEURS
+	public Adresse() {
+	}
+
 	public Adresse(String voie, String codePostal, String ville, String pays) {
 		this.voie = voie;
 		this.codePostal = codePostal;
@@ -36,36 +37,45 @@ public class Adresse implements Serializable{
 		this.pays = pays;
 	}
 
-	//GETTERS SETTERS
+	// GETTERS SETTERS
 	public int getPk() {
 		return pk;
 	}
+
 	public void setPk(int pk) {
 		this.pk = pk;
 	}
+
 	public String getVoie() {
 		return voie;
 	}
+
 	public void setVoie(String voie) {
 		this.voie = voie;
 	}
+
 	public String getCodePostal() {
 		return codePostal;
 	}
+
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
+
 	public String getVille() {
 		return ville;
 	}
+
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
+
 	public String getPays() {
 		return pays;
 	}
+
 	public void setPays(String pays) {
 		this.pays = pays;
 	}
-	
+
 }
