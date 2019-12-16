@@ -9,11 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "adresses")
 @Access(AccessType.FIELD)
+@NamedQuery(name = "adresse.findAdresse",
+			query = "SELECT a FROM Adresse a")
+@NamedQuery(name = "adresse.findAdresseByPk",
+			query = "SELECT a FROM Adresse a WHERE a.pk LIKE :pk")
 public class Adresse implements Serializable{
 
 

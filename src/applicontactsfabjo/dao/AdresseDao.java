@@ -15,12 +15,12 @@ public class AdresseDao {
 	private EntityManager em;
 	
 	public List<Adresse> findAdresses(){
-		return em.createNamedQuery("", Adresse.class)
+		return em.createNamedQuery("adresse.findAdresse", Adresse.class)
 				 .getResultList();
 	}
 	
 	public List<Adresse> findAdresseByPk(int pk){
-		return em.createNamedQuery("", Adresse.class)
+		return em.createNamedQuery("adresse.findAdresseByPk", Adresse.class)
 				 .setParameter("pk", pk)
 				 .getResultList();
 	}
