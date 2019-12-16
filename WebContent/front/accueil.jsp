@@ -14,7 +14,7 @@
 
     <c:forEach var="personne" items="${listepersonnes}">
 			<tr>
-				<td>${personne.prenom} ${personne.nom}</td><br>
+				<td>${personne.prenom} ${personne.nom} <span class="hide">${personne.pk}</span></td><br>
 			</tr>
 		</c:forEach>
 

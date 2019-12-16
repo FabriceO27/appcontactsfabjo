@@ -31,7 +31,7 @@ public class PersonneDAO {
 		Personne person = em.find(Personne.class, pk);
 
 		em.getTransaction().begin();
-		person = new Personne(personne.getCivilite(), personne.getPrenom(), personne.getNom()/*, personne.getAdresse()*/);
+		person = new Personne(personne.getCivilite(), personne.getPrenom(), personne.getNom(), personne.getAdresse());
 		em.getTransaction().commit();
 	}
 }

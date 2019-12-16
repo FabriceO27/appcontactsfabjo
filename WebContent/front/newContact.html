@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>New Contact</title>
+</head>
+<body>
+    <span>Nouveau Contact</span>
+      <form method="get" action="../LancerAccueil" ><button type="button" name="button">
+        <img src="../pictures/home-icon-silhouette.png"/>
+      </button></form><p></p>
+    <form action="../AjouterContact" method="post">
+
+      <input type="radio" id="madame" name="civilite">
+        <label for="madame">Madame</label>
+      <input type="radio" id="monsieur" name="civilite">
+        <label for="monsieur">Monsieur</label><p></p>
+
+      Prénom : <input type="text" name="prenom" id="prenom" placeholder="Prénom"/><p></p>
+      Nom : <input type="text" name="nom" id="nom" placeholder="Nom"/><p></p>
+      Adresse <br>
+      Voie : <input type="text" name="voie" id="voie" placeholder="ex : 5 rue de la République"/><br>
+      Code postal : <input type="text" name="cp" id="cp" placeholder="Code postal"/><br>
+      Ville : <input type="text" name="ville" id="ville" placeholder="Ville"/><br>
+      Pays : <input type="text" name="pays" id="pays" value="France"/><p></p>
+
+      <input type="submit" name="ajouter" value="Ajouter">
+
+  </form>
+
+</body>
+</html>

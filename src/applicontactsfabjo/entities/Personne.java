@@ -9,7 +9,6 @@ import javax.persistence.*;
 @Access(AccessType.FIELD)
 @NamedQuery(name = "personne.findPersonne", query = "SELECT p FROM Personne p")
 @NamedQuery(name = "personne.findPersonneById", query = "SELECT p FROM Personne p WHERE p.pk LIKE :pk")
-
 public class Personne {
 
 	@Id
@@ -18,7 +17,8 @@ public class Personne {
 	private String civilite;
 	private String nom;
 	private String prenom;
-//	private List<String> adresse;
+	@OneToMany(mappedBy = "personne", cascade = CascadeType.PERSIST)
+	private List<Adresse> adresse;
 //	private String surnom;
 //	public Avatar pp;
 
@@ -34,18 +34,21 @@ public class Personne {
 	 * @param surnom
 	 */
 
-	public Personne(String civilite, String nom, String prenom/*, List<String> adresse*/) {
+	public Personne(String civilite, String nom, String prenom, List<Adresse> adresse) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
 		this.prenom = prenom;
-		/*this.adresse = adresse;*/
+		this.adresse = adresse;
 	}
-
+	public Personne(String civilite, String nom, String prenom) {
+	this.civilite = civilite;
+	this.nom = nom;
+	this.prenom = prenom;
+}
 	public Personne() {
-		super();
 	}
-
+	
 	/**
 	 * Getters and Setters
 	 */
@@ -82,15 +85,15 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	/*public List<String> getAdresse() {
+	public List<Adresse> getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(List<String> adresse) {
+	public void setAdresse(List<Adresse> adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getSurnom() {
+	/*public String getSurnom() {
 		return surnom;
 	}
 

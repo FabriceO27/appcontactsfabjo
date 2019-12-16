@@ -29,18 +29,16 @@ public class LancerAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("listepersonnes", service.findPersonnes());
+		dispatcher = request.getRequestDispatcher("/front/accueil.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Personne> personne = service.findPersonnes();
-		request.setAttribute("listepersonnes", personne);
-		dispatcher = request.getRequestDispatcher("/front/accueil.jsp");
-		dispatcher.forward(request, response);
+		
 	}
 
 }
