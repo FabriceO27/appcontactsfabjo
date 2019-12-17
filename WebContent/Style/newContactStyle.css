@@ -13,6 +13,7 @@ body {
 	font-size: 2.5em;
 	font-family: 'Anton', sans-serif;
 }
+
 .form {
 	color: black;
 	text-align: center;
@@ -25,33 +26,34 @@ body {
 	text-align: center;
 	margin: auto;
 	box-shadow: 0px 0px 25px 20px rgba(0, 0, 0, 0.5);
+	text-align: center;
 }
 
 .align {
 	display: block;
 	width: 150px;
 	float: left;
-
 }
 
 tr {
-  list-style-type: none;
-  margin-top: 30px;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(30, 30, 120, 1);
+	list-style-type: none;
+	margin-top: 30px;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgba(30, 30, 120, 1);
 }
 
 ul {
-  list-style-type: none;
-  margin: auto;
+	list-style-type: none;
+	margin: auto;
 	width: 350px;
-  padding: 0;
-  overflow: hidden;
-  background-color: #fff;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fff;
 }
 
 li {
+
   float: left;
 	width: 100px;
 }
@@ -67,19 +69,34 @@ li .yes, .dropbtn {
 
 li .yes:hover, .dropdown:hover .dropbtn {
   background-color: rgba(200, 200, 200, 1);
+	float: left;
+	width: 350px;
+}
+
+li span, .dropbtn {
+	display: inline-block;
+	width: 350px;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li span:hover, .dropdown:hover .dropbtn {
+	background-color: rgba(80, 80, 200, 1);
 }
 
 li.dropdown {
-  display: inline-block;
+	display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 350px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	width: 350px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
 .dropdown-content .yes {
@@ -93,8 +110,20 @@ li.dropdown {
 
 .dropdown-content .yes:hover {background-color: #f1f1f1;}
 
+.dropdown-content span {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content span:hover {
+	background-color: #f1f1f1;
+}
+
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
 
 a {
@@ -140,3 +169,4 @@ a {
 	background: #82838f;
 
 }
+

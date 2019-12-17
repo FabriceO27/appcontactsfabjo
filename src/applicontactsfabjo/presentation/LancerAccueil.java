@@ -30,6 +30,7 @@ public class LancerAccueil extends HttpServlet {
 		request.setAttribute("listepersonnes", service.findPersonnes());
 		dispatcher = request.getRequestDispatcher("/front/accueil.jsp");
 		dispatcher.forward(request, response);
+
 	}
 
 	/**
