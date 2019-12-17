@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+  <link rel="stylesheet" href="Style/newContactStyle.css">
 <title>Accueil</title>
 </head>
 <body>
@@ -13,19 +14,20 @@
     <a href="front/newContact.html"><input type="button" name="newcontact" id="newcontact" value="+"/></a><p></p>
 
     <c:forEach var="personne" items="${listepersonnes}">
-			<tr>
-				<td id="${personne.pk}">
-          <div class="contact">
-            ${personne.prenom} ${personne.nom}
-          </div>
-          <div class="adresse">
-            ${personne.adresse.voie} <br>
-            ${personne.adresse.codePostal} ${personne.adresse.ville}<br>
-            ${personne.adresse.pays}
-          </div>
-        </td>
+      <ul>
+          <li class="dropdown">
+            <span class="dropbtn">${personne.prenom} ${personne.nom}</span>
+            <div class="dropdown-content">
+              <span class="adresse">
 
-			</tr><br>
+                  ${personne.adresse.voie}
+                  ${personne.adresse.codePostal} ${personne.adresse.ville}
+                  ${personne.adresse.pays}
+
+              </span>
+            </div>
+          </li>
+      </ul><br>
 		</c:forEach>
 
 
