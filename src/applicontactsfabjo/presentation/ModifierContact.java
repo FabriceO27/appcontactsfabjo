@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import applicontactsfabjo.entities.Adresse;
+import applicontactsfabjo.entities.Personne;
 import applicontactsfabjo.services.PersonneServices;
 
 /**
@@ -26,7 +28,15 @@ public class ModifierContact extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int pk = Integer.parseInt(request.getParameter("pk"));
-		System.out.println(pk);
+		String civilite = service.findPersonneById(pk).get(0).getCivilite();
+		String prenom = service.findPersonneById(pk).get(0).getPrenom();
+		String nom = service.findPersonneById(pk).get(0).getNom();
+		Adresse adresse = service.findPersonneById(pk).get(0).getAdresse();
+		Personne personne = new Personne(civilite, nom, prenom, adresse);
+		personne.setPk(pk);
+		request.setAttribute("personne", personne);
+		dispatcher = request.getRequestDispatcher("front/modifierContact.jsp");
+		dispatcher.forward(request, response);
 
 	}
 

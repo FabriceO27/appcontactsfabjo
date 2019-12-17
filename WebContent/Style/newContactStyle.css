@@ -103,6 +103,11 @@ li.dropdown {
 a {
 	font-size: 15px;
 	color: white;
+}
+
+.hide{
+	display: none;
+
 
 }
 

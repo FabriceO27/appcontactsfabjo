@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../Style/newContactStyle.css">
+<link rel="stylesheet" href="Style/newContactStyle.css">
 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap"
 	rel="stylesheet">
 <link
@@ -25,36 +25,33 @@
 
 		<br>
 
-		<form method="get" action="../LancerAccueil">
-			<button type="button" name="button">
-				<img src="../pictures/home-icon-silhouette.png" />
-			</button>
-		</form>
-		<br>
+
 		<p></p>
 
 
-		<form action="../AjouterContact" method="post">
+		<form action="ValiderModif" method="post">
 
-			<input type="radio" id="madame" name="civilite"> <label
-				for="madame">Madame</label> <input type="radio" id="monsieur"
-				name="civilite"> <label for="monsieur">Monsieur</label> <input
-				type="radio" id="mademoiselle" name="civilite"> <label
-				for="mademoiselle">Mademoiselle</label>
-			<p></p>
+			<label class="align" for="civilite"> Civilité : </label>
+	      <select name="civilite" id="civilite" value="${personne.civilite}">
+	          <option value="">-- civilite --</option>
+	           <option value="Mlle">Mlle</option>
+	           <option value="Mme">Mme</option>
+	           <option value="M">M</option>
+	        </select><p></p>
 			<div>
-			
-			<label class="align" for="prenom"> Prénom : </label><input type="text" name="prenom" id="prenom" placeholder="Franck"/><p></p>
-    <label class="align" for="nom"> nom :       </label><input type="text" name="nom" id="nom" placeholder="Hautbois"/><p></p>
+
+		<input type="text" class="hide" name="pk" value="${personne.pk}"/>
+		<label class="align" for="prenom"> Prénom : </label><input type="text" name="prenom" id="prenom" placeholder="Franck" value="${personne.prenom}" required/><p></p>
+    <label class="align" for="nom"> nom :       </label><input type="text" name="nom" id="nom" placeholder="Hautbois" value="${personne.nom}" required/><p></p>
     Adresse <br><br>
-    <label class="align" for="voie"> Voie :     </label><input type="text" name="voie" id="voie" placeholder="5 rue de la République"/><br>
-    <label class="align" for="cp"> Code postal :</label><input type="text" name="cp" id="cp" placeholder="91440"/><br>
-    <label class="align" for="ville"> Ville :   </label><input type="text" name="ville" id="ville" placeholder="Bures-sur-Yvette"/><br>
-    <label class="align" for="pays"> Pays :     </label><input type="text" name="pays" id="pays" placeholder="France"/><p></p>
-			
+    <label class="align" for="voie"> Voie :     </label><input type="text" name="voie" id="voie" placeholder="5 rue de la République" value="${personne.adresse.voie}"/><br>
+    <label class="align" for="cp"> Code postal :</label><input type="text" name="cp" id="cp" placeholder="91440" value="${personne.adresse.codePostal}"/><br>
+    <label class="align" for="ville"> Ville :   </label><input type="text" name="ville" id="ville" placeholder="Bures-sur-Yvette" value="${personne.adresse.ville}"/><br>
+    <label class="align" for="pays"> Pays :     </label><input type="text" name="pays" id="pays" placeholder="France" value="${personne.adresse.pays}"/><p></p>
+
 			</div>
 
-			<input type="submit" name="ajouter" value="Modifier"> <br>
+			<input type="submit" class="modifier" name="modifier" value="Modifier"> <br>
 
 
 		</form>

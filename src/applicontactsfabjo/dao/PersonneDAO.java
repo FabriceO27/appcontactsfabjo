@@ -27,11 +27,7 @@ public class PersonneDAO {
 		em.persist(personne);
 	}
 
-	public void updatePersonne(Personne personne, int pk) {
-		Personne person = em.find(Personne.class, pk);
-
-		em.getTransaction().begin();
-		person = new Personne(personne.getCivilite(), personne.getPrenom(), personne.getNom(), personne.getAdresse());
-		em.getTransaction().commit();
+	public void updatePersonne(Personne personne) {
+		em.merge(personne);
 	}
 }
