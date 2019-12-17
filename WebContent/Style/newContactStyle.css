@@ -1,0 +1,38 @@
+body {
+color:white;
+/* background-color: black; */
+background-image:url(../pictures/Sombre.jpg);
+text-align: center;
+}
+
+
+head{
+	color: white;
+}
+
+.entete{
+	
+	font-size: 2.5em;
+	
+}
+
+.form {
+color: black  ;
+text-align: center;
+background: #ff8000;
+height: auto ;
+width: 380px;
+  position: absolute;
+  top: 120px;
+  right: 760px;
+  border-radius : 50px;
+padding: 25px;
+}
+
+
+a {
+font-size: 15px;
+color: white;
+}
+
+
