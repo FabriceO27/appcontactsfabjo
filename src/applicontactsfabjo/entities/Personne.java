@@ -1,13 +1,11 @@
 package applicontactsfabjo.entities;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "personnes")
 @Access(AccessType.FIELD)
-@NamedQuery(name = "personne.findPersonne", query = "SELECT p FROM Personne p")
+@NamedQuery(name = "personne.findPersonne", query = "SELECT p FROM Personne p ORDER BY p.prenom asc")
 @NamedQuery(name = "personne.findPersonneById", query = "SELECT p FROM Personne p WHERE p.pk LIKE :pk")
 public class Personne {
 
@@ -17,8 +15,11 @@ public class Personne {
 	private String civilite;
 	private String nom;
 	private String prenom;
-	@OneToMany(mappedBy = "personne", cascade = CascadeType.PERSIST)
-	private List<Adresse> adresse;
+	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE}, fetch = FetchType.EAGER)
+	@JoinTable(name = "contacts_adresses",
+	   joinColumns = @JoinColumn(name = "fk_adresse"),
+	   inverseJoinColumns = @JoinColumn(name = "fk_personne"))
+	private Adresse adresse;
 //	private String surnom;
 //	public Avatar pp;
 
@@ -34,7 +35,7 @@ public class Personne {
 	 * @param surnom
 	 */
 
-	public Personne(String civilite, String nom, String prenom, List<Adresse> adresse) {
+	public Personne(String civilite, String nom, String prenom, Adresse adresse) {
 		super();
 		this.civilite = civilite;
 		this.nom = nom;
@@ -85,11 +86,11 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	public List<Adresse> getAdresse() {
+	public Adresse getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(List<Adresse> adresse) {
+	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
 

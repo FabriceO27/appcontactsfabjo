@@ -9,10 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -31,11 +29,7 @@ public class Adresse implements Serializable {
 	private String codePostal;
 	private String ville;
 	private String pays;
-	@ManyToOne
-	@JoinTable(name = "contacts_adresses",
-	   joinColumns = @JoinColumn(name = "fk_personne"),
-	   inverseJoinColumns = @JoinColumn(name = "fk_adresse"))
-	private Personne personne;
+
 
 	// CONSTRUCTEURS
 	public Adresse() {
@@ -89,13 +83,6 @@ public class Adresse implements Serializable {
 		this.pays = pays;
 	}
 
-	public Personne getPersonne() {
-		return personne;
-	}
-
-	public void setPersonne(Personne personne) {
-		this.personne = personne;
-	}
 	
 
 }

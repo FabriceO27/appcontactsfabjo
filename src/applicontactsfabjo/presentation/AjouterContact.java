@@ -1,11 +1,8 @@
 package applicontactsfabjo.presentation;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.ejb.EJB;
-import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,9 +44,7 @@ public class AjouterContact extends HttpServlet {
 		String pays = request.getParameter("pays");
 		
 		Adresse adresse = new Adresse(voie, codePostal, ville, pays);
-		List<Adresse> adresses = new ArrayList<Adresse>();
-		adresses.add(adresse);
-		Personne personne = new Personne(civilite, nom, prenom, adresses);
+		Personne personne = new Personne(civilite, nom, prenom, adresse);
 		
 		service.addPersonne(personne);
 		request.setAttribute("listepersonnes", service.findPersonnes());
