@@ -27,17 +27,18 @@
             <span class="dropbtn yes">${personne.prenom} ${personne.nom}</span>
             <div class="dropdown-content">
               <div class="adresse yes">
+                  ${personne.prenom} ${personne.nom}<br>
                   ${personne.adresse.voie}
                   ${personne.adresse.codePostal} ${personne.adresse.ville}
                   ${personne.adresse.pays}
               </div>
               <div>
-                 <form action="index.html" method="post">
-                   <span class="hide" id="pk">${personne.pk}</span><input class="afficher" type="submit" value="Afficher"/>
+                 <form action="AfficherContact" method="post">
+                   <input type="text" class="hide" name="pk" value="${personne.pk}"/><input class="afficher" type="submit" value="Afficher"/>
                  </form>
 
-                 <form action="../ModifierContact" method="get">
-                   <span class="hide" id="pk">${personne.pk}</span><input class="modifier" type="submit" value="Modifier"/>
+                 <form action="ModifierContact" method="post">
+                   <input type="text" class="hide" name="pk" value="${personne.pk}"/><input class="modifier" type="submit" value="Modifier"/>
                  </form>
               </div>
             </div>
