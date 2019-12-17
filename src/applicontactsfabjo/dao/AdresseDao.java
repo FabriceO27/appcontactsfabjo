@@ -8,6 +8,10 @@ import javax.persistence.PersistenceContext;
 
 import applicontactsfabjo.entities.Adresse;
 
+/**classe sans utilité pour le moment, permettra de faire communiquer avec la BDD
+ * @author Adminl
+ *
+ */
 @Singleton
 public class AdresseDao {
 

@@ -14,7 +14,7 @@ import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
 import applicontactsfabjo.services.PersonneServices;
 
-/**
+/**methode no implémentée, permettra d'afficher la page de modification d'un contact
  * Servlet implementation class ModifierContact
  */
 @WebServlet("/ModifierContact")

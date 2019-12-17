@@ -2,6 +2,10 @@ package applicontactsfabjo.entities;
 
 import javax.persistence.*;
 
+/** Classe permettant de rassembler les données d'un personnes, cette classe est aggregée par la classe adresse
+ * @author Adminl
+ *
+ */
 @Entity
 @Table(name = "personnes")
 @Access(AccessType.FIELD)

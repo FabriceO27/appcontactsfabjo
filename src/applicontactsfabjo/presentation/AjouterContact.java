@@ -14,7 +14,7 @@ import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
 import applicontactsfabjo.services.PersonneServices;
 
-/**
+/**Servlet permettant d'ajouter un contact
  * Servlet implementation class AjouterContact
  */
 @WebServlet("/AjouterContact")
@@ -24,7 +24,7 @@ public class AjouterContact extends HttpServlet {
     @EJB
     private PersonneServices service;
 
-	/**
+	/**permet d'ajouter un contact à la bdd avec les données de la page ajouter et renvoie vers la page de tous les contacts
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

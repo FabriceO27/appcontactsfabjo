@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import applicontactsfabjo.services.PersonneServices;
 
-/**
+/**permet d'afficher tous les contacts
  * Servlet implementation class LancerAccueil
  */
 @WebServlet("/LancerAccueil")
@@ -23,7 +23,7 @@ public class LancerAccueil extends HttpServlet {
 	private PersonneServices service;
 	private RequestDispatcher dispatcher;
 	
-	/**
+	/**utilisée comme point d'entrée de l'application pour afficher les résultats
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

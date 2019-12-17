@@ -10,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**Classe permettant de rassembler toutes les données d'une adresse
+ * @author Adminl
+ *
+ */
 @Entity
 @Table(name = "adresses")
 @Access(AccessType.FIELD)

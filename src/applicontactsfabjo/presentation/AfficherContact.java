@@ -14,7 +14,7 @@ import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
 import applicontactsfabjo.services.PersonneServices;
 
-/**
+/**Servlet permettant d'afficher un contact particulier
  * Servlet implementation class AfficherContact
  */
 @WebServlet("/AfficherContact")
@@ -24,7 +24,7 @@ public class AfficherContact extends HttpServlet {
     @EJB
     private PersonneServices service;
 
-	/**
+	/**avec les information du contact lançant la méthode, cherche les données dans la bdd et l'affiche sur la page afficher
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

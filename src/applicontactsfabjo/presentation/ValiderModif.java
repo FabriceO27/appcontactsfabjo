@@ -15,7 +15,7 @@ import applicontactsfabjo.entities.Personne;
 import applicontactsfabjo.services.AdresseServices;
 import applicontactsfabjo.services.PersonneServices;
 
-/**
+/**methode no implémentée, permettra de valider les modifications d'un contacts
  * Servlet implementation class ValiderModif
  */
 @WebServlet("/ValiderModif")

@@ -8,6 +8,10 @@ import javax.ejb.Singleton;
 import applicontactsfabjo.dao.AdresseDao;
 import applicontactsfabjo.entities.Adresse;
 
+/**classe sans utilité pour le moment, permettra de faire communiquer les adresses entre la couche persistance et presentation
+ * @author Adminl
+ *
+ */
 @Singleton
 public class AdresseServices {
 
