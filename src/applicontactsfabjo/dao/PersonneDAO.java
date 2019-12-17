@@ -6,6 +6,7 @@ import javax.ejb.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
 
 @Singleton
@@ -27,7 +28,8 @@ public class PersonneDAO {
 		em.persist(personne);
 	}
 
-	public void updatePersonne(Personne personne) {
+	public void updatePersonne(Personne personne, Adresse adresse) {
+		em.merge(adresse);
 		em.merge(personne);
 	}
 }

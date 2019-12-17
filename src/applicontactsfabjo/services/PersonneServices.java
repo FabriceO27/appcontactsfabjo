@@ -5,9 +5,9 @@ import java.util.List;
 // Creation de la classe PersonneServices
 
 import javax.ejb.*;
-import javax.persistence.*;
 
 import applicontactsfabjo.dao.PersonneDAO;
+import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
 
 @Singleton
@@ -30,8 +30,8 @@ public class PersonneServices {
 
 	}
 
-	public void updatePersonne(Personne personne, int pk) {
-		dao.updatePersonne(personne, pk);
+	public void updatePersonne(Personne personne, Adresse adresse) {
+		dao.updatePersonne(personne, adresse);
 
 	}
 }

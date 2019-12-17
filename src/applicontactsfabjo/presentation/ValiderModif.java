@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import applicontactsfabjo.entities.Adresse;
 import applicontactsfabjo.entities.Personne;
+import applicontactsfabjo.services.AdresseServices;
 import applicontactsfabjo.services.PersonneServices;
 
 /**
@@ -29,17 +30,18 @@ public class ValiderModif extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int pk = Integer.parseInt(request.getParameter("pk"));
-		String civilite = request.getParameter("civilite");
-		String prenom = request.getParameter("prenom");
-		String nom = request.getParameter("nom");
-		String voie = request.getParameter("voie");
-		String codePostal = request.getParameter("cp");
-		String ville = request.getParameter("ville");
-		String pays = request.getParameter("pays");
-		
-		Personne personne = new Personne(civilite, nom, prenom, new Adresse(voie, codePostal, ville, pays));
+		String civilite = request.getParameter("civilite"); System.out.println(civilite);
+		String prenom = request.getParameter("prenom"); System.out.println(prenom);
+		String nom = request.getParameter("nom"); System.out.println(nom);
+		String voie = request.getParameter("voie"); System.out.println(voie);
+		String codePostal = request.getParameter("cp"); System.out.println(codePostal);
+		String ville = request.getParameter("ville"); System.out.println(ville);
+		String pays = request.getParameter("pays"); System.out.println(pays);
+		Adresse adresse = new Adresse(voie, codePostal, ville, pays);
+		Personne personne = new Personne(civilite, nom, prenom, adresse);
 		personne.setPk(pk);
-		service.updatePersonne(personne, pk);
+		service.updatePersonne(personne, adresse);
+
 		
 		request.setAttribute("listepersonnes", service.findPersonnes());
 		dispatcher = request.getRequestDispatcher("/front/accueil.jsp");

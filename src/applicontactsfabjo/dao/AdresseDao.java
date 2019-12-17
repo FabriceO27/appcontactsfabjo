@@ -26,12 +26,8 @@ public class AdresseDao {
 		em.persist(adresse);
 	}
 
-	public void updateAdresse(Adresse adresse, int pk) {
-		Adresse address = em.find(Adresse.class, pk);
-
-		em.getTransaction().begin();
-		address = new Adresse(adresse.getVoie(), adresse.getCodePostal(), adresse.getVille(), adresse.getPays());
-		em.getTransaction().commit();
+	public void updateAdresse(Adresse adresse) {
+		em.merge(adresse);
 	}
 
 	public void deleteAdresse(int pk) {

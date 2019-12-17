@@ -26,8 +26,8 @@ public class AdresseServices {
 		dao.addAdresse(adresse);
 	}
 	
-	public void updateAdresse(Adresse adresse, int pk) {
-		dao.updateAdresse(adresse, pk);
+	public void updateAdresse(Adresse adresse) {
+		dao.updateAdresse(adresse);
 	}
 	
 	public void deleteAdresse(int pk) {

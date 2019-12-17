@@ -37,9 +37,10 @@
                    <input type="text" class="hide" name="pk" value="${personne.pk}"/><input class="afficher" type="submit" value="Afficher"/>
                  </form>
 
-                 <form action="ModifierContact" method="post">
-                   <input type="text" class="hide" name="pk" value="${personne.pk}"/><input class="modifier" type="submit" value="Modifier"/>
-                 </form>
+<!--                  <form action="ModifierContact" method="post"> -->
+<%--                    <input type="text" class="hide" name="pk" value="${personne.pk}"/><input class="modifier" type="submit" value="Modifier"/> --%>
+<!--                  </form> -->
+
               </div>
             </div>
           </li>
