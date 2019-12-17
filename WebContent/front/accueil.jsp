@@ -14,8 +14,18 @@
 
     <c:forEach var="personne" items="${listepersonnes}">
 			<tr>
-				<td>${personne.prenom} ${personne.nom} <span class="hide">${personne.pk}</span></td><br>
-			</tr>
+				<td id="${personne.pk}">
+          <div class="contact">
+            ${personne.prenom} ${personne.nom}
+          </div>
+          <div class="adresse">
+            ${personne.adresse.voie} <br>
+            ${personne.adresse.codePostal} ${personne.adresse.ville}<br>
+            ${personne.adresse.pays}
+          </div>
+        </td>
+
+			</tr><br>
 		</c:forEach>
 
 
