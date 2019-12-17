@@ -18,17 +18,15 @@ import applicontactsfabjo.services.PersonneServices;
 @WebServlet("/ModifierContact")
 public class ModifierContact extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private PersonneServices service;
 	private RequestDispatcher dispatcher;
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		
-		
-	
+		int pk = Integer.parseInt(request.getParameter("pk"));
+		System.out.println(pk);
 
 	}
 
